@@ -30,8 +30,11 @@ Multi-agent coordination, task prioritization, handoff management, and progress 
 | Request Type | Primary Agent | Supporting |
 |--------------|---------------|------------|
 | New page template | WordPress Theme | Frontend |
+| **Extract specs from Figma** | **Figma Implementation** | UX Review |
+| **Build section from Figma** | **Figma Implementation** | Frontend, WordPress |
+| **Pixel-perfect implementation** | **Figma Implementation** | UX Review |
 | Implement section from Figma | Frontend/Build | WordPress, UX Review |
-| Compare with Figma | UX/UI Review | - |
+| Compare with Figma | UX/UI Review | Figma Implementation |
 | Deploy to server | DevOps | - |
 | Create contact form | Database/ACF | WordPress Theme |
 | Add custom post type | Database/ACF | WordPress Theme |

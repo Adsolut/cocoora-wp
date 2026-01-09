@@ -118,20 +118,23 @@ $hero_image = get_field('hero_image');
 				</p>
 			</div>
 
-			<!-- Photo Gallery -->
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+			<!-- Photo Gallery - 3 images as per Figma -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
 				<?php
 				$gallery = get_field('location_gallery');
 				if ($gallery) :
+					$count = 0;
 					foreach ($gallery as $image) :
+						if ($count >= 3) break; // Limit to 3 images per Figma
 				?>
 					<div class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
 						<img src="<?php echo esc_url($image['sizes']['medium_large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
 					</div>
 				<?php
+						$count++;
 					endforeach;
 				else :
-					for ($i = 0; $i < 4; $i++) :
+					for ($i = 0; $i < 3; $i++) :
 				?>
 					<div class="aspect-[4/3] rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-white to-cocoora-light">
 						<div class="w-full h-full flex items-center justify-center text-4xl">🏥</div>
