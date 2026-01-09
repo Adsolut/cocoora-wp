@@ -50,6 +50,23 @@
            hover:bg-cocoora-blue hover:text-white focus:ring-cocoora-blue;
   }
 
+  /* Pill Buttons (Figma CTA style) */
+  .btn-pill {
+    @apply inline-flex items-center justify-center px-6 py-2.5
+           font-semibold rounded-full transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-pill-primary {
+    @apply btn-pill bg-cocoora-blue text-white
+           hover:bg-cocoora-navy focus:ring-cocoora-blue;
+  }
+
+  .btn-pill-outline {
+    @apply btn-pill border-2 border-cocoora-blue text-cocoora-blue
+           hover:bg-cocoora-blue hover:text-white focus:ring-cocoora-blue;
+  }
+
   /* Cards */
   .card {
     @apply bg-white rounded-xl shadow-md overflow-hidden
@@ -58,6 +75,56 @@
 
   .card-body {
     @apply p-6;
+  }
+
+  /* Service Cards (Come Funziona) */
+  .card-service {
+    @apply bg-white rounded-2xl shadow-lg overflow-hidden;
+  }
+
+  .card-service-image {
+    @apply aspect-[4/3] w-full object-cover;
+  }
+
+  .card-service-content {
+    @apply p-6 md:p-8;
+  }
+
+  /* Pricing Cards (Piani) */
+  .card-pricing {
+    @apply bg-white rounded-2xl p-6 md:p-8
+           transition-all duration-300;
+  }
+
+  .card-pricing-default {
+    @apply card-pricing border border-gray-100 shadow-lg;
+  }
+
+  .card-pricing-featured {
+    @apply card-pricing border-2 border-cocoora-blue shadow-xl
+           transform scale-105;
+  }
+
+  /* Address Pill (Location) */
+  .address-pill {
+    @apply inline-flex items-center gap-3 px-6 py-4
+           bg-white/80 backdrop-blur-sm rounded-full shadow-md
+           text-cocoora-navy;
+  }
+
+  /* FAQ Accordion */
+  .faq-item {
+    @apply bg-white rounded-xl shadow-sm overflow-hidden;
+  }
+
+  .faq-button {
+    @apply w-full flex items-center justify-between p-6
+           text-left text-lg font-semibold text-cocoora-navy
+           hover:bg-gray-50 transition-colors;
+  }
+
+  .faq-content {
+    @apply px-6 pb-6 text-gray-600;
   }
 
   /* Section Spacing */
@@ -77,6 +144,15 @@
 
   .form-label {
     @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  /* Form Section */
+  .form-section {
+    @apply relative overflow-hidden py-16 md:py-24;
+  }
+
+  .form-container {
+    @apply bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-2xl mx-auto;
   }
 
   /* Navigation */

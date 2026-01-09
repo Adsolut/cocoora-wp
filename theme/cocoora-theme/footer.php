@@ -1,68 +1,66 @@
 <?php
 /**
- * The footer template
- *
- * Contains the closing of the #page div and all content after.
+ * Footer Template - Pixel Perfect Figma Match
  *
  * @package Cocoora
- * @since 1.0.0
+ * @since 2.0.0
  */
 
 ?>
 
+	<!-- Footer -->
 	<footer id="colophon" class="site-footer bg-cocoora-navy text-white mt-auto">
 		<div class="container py-8">
-			<div class="flex flex-col md:flex-row justify-between items-center gap-6">
 
-				<!-- Logo & Company -->
-				<div class="flex flex-col md:flex-row items-center gap-4">
-					<?php if ( has_custom_logo() ) : ?>
+			<!-- Main Footer Content - Centered -->
+			<div class="flex flex-col items-center text-center space-y-6">
+
+				<!-- Logo -->
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2" rel="home">
+					<?php if (has_custom_logo()) : ?>
 						<div class="brightness-0 invert">
 							<?php the_custom_logo(); ?>
 						</div>
 					<?php else : ?>
-						<span class="text-xl font-bold font-heading"><?php bloginfo( 'name' ); ?></span>
-					<?php endif; ?>
-					<span class="text-gray-400 hidden md:inline">|</span>
-					<span class="text-gray-300 text-sm">Cocoora di Primecare srl</span>
-				</div>
-
-				<!-- Contact Info -->
-				<div class="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-300">
-					<a href="mailto:info@cocoora.it" class="hover:text-white transition-colors flex items-center gap-2">
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+						<!-- Logo Icon -->
+						<svg class="w-8 h-8 text-white" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
+							<circle cx="12" cy="14" r="3" fill="currentColor"/>
+							<circle cx="20" cy="14" r="3" fill="currentColor"/>
+							<path d="M10 20 Q16 26 22 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
 						</svg>
+						<span class="text-xl font-bold font-heading text-white">
+							<?php bloginfo('name'); ?>
+						</span>
+					<?php endif; ?>
+				</a>
+
+				<!-- Company Info Line -->
+				<div class="flex flex-wrap items-center justify-center gap-2 text-sm text-gray-300">
+					<span>&copy; <?php echo esc_html(date('Y')); ?></span>
+					<span class="text-gray-500">•</span>
+					<span>Cocoora di Primecare srl</span>
+					<span class="text-gray-500">•</span>
+					<a href="mailto:info@cocoora.it" class="hover:text-white transition-colors">
 						info@cocoora.it
 					</a>
-					<span class="text-gray-500 hidden sm:inline">|</span>
-					<a href="tel:+390811822778" class="hover:text-white transition-colors flex items-center gap-2">
-						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-						</svg>
-						+39 081 1822 7784
+					<span class="text-gray-500">•</span>
+					<a href="tel:+390811822778" class="hover:text-white transition-colors">
+						T +39 081.1822.7784
 					</a>
 				</div>
 
-			</div>
+				<!-- Legal Links -->
+				<nav class="flex items-center gap-4 text-sm text-gray-400" aria-label="<?php esc_attr_e('Legal Navigation', 'cocoora'); ?>">
+					<a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>" class="hover:text-white transition-colors">
+						<?php esc_html_e('Privacy Policy', 'cocoora'); ?>
+					</a>
+					<span class="text-gray-600">|</span>
+					<a href="<?php echo esc_url(home_url('/cookie-policy/')); ?>" class="hover:text-white transition-colors">
+						<?php esc_html_e('Cookie Policy', 'cocoora'); ?>
+					</a>
+				</nav>
 
-			<!-- Bottom Bar -->
-			<div class="border-t border-white/10 mt-6 pt-6">
-				<div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-					<p>
-						&copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>.
-						<?php esc_html_e( 'Tutti i diritti riservati.', 'cocoora' ); ?>
-					</p>
-
-					<nav class="flex flex-wrap gap-6" aria-label="<?php esc_attr_e( 'Legal Navigation', 'cocoora' ); ?>">
-						<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="hover:text-white transition-colors">
-							<?php esc_html_e( 'Privacy Policy', 'cocoora' ); ?>
-						</a>
-						<a href="<?php echo esc_url( home_url( '/cookie-policy/' ) ); ?>" class="hover:text-white transition-colors">
-							<?php esc_html_e( 'Cookie Policy', 'cocoora' ); ?>
-						</a>
-					</nav>
-				</div>
 			</div>
 		</div>
 	</footer>
