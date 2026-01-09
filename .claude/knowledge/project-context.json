@@ -1,0 +1,131 @@
+{
+  "project": {
+    "name": "Cocoora",
+    "version": "1.0.0",
+    "description": "Corporate/Agency website for Cocoora di Primecare srl",
+    "language": "it_IT"
+  },
+  "status": {
+    "phase": "development",
+    "last_updated": "2025-01-09",
+    "completed_milestones": [],
+    "active_tasks": [],
+    "blocked_tasks": []
+  },
+  "urls": {
+    "local": "http://localhost:8080",
+    "local_admin": "http://localhost:8080/wp-admin",
+    "phpmyadmin": "http://localhost:8081",
+    "vite_dev": "http://localhost:5173",
+    "staging": null,
+    "production": "https://cocoora.it",
+    "figma": "https://www.figma.com/design/Pct8765tf4EgdRjfl9IVu0/Cocoora?node-id=0-1&t=k1XGiLFlZVBcyS21-1"
+  },
+  "credentials": {
+    "local_wp": {
+      "username": "admin",
+      "password": "admin",
+      "note": "Local development only"
+    },
+    "database": {
+      "host": "db",
+      "name": "wordpress",
+      "user": "wordpress",
+      "password": "wordpress"
+    }
+  },
+  "tech_stack": {
+    "wordpress": "6.x",
+    "php": "8.2+",
+    "theme": "cocoora-theme",
+    "build_tool": "Vite 5.x",
+    "css_framework": "Tailwind CSS 3.x",
+    "js_framework": "Alpine.js 3.x",
+    "acf": "Advanced Custom Fields Pro"
+  },
+  "plugins_required": [
+    {
+      "name": "Advanced Custom Fields Pro",
+      "slug": "advanced-custom-fields-pro",
+      "purpose": "Custom fields and flexible content"
+    },
+    {
+      "name": "Contact Form 7",
+      "slug": "contact-form-7",
+      "purpose": "Contact forms"
+    },
+    {
+      "name": "Flamingo",
+      "slug": "flamingo",
+      "purpose": "Store form submissions"
+    },
+    {
+      "name": "Yoast SEO",
+      "slug": "wordpress-seo",
+      "purpose": "SEO optimization"
+    }
+  ],
+  "custom_post_types": [
+    {
+      "name": "service",
+      "label": "Servizi",
+      "slug": "servizi",
+      "has_archive": true
+    },
+    {
+      "name": "testimonial",
+      "label": "Testimonianze",
+      "slug": null,
+      "has_archive": false
+    }
+  ],
+  "pages_structure": [
+    {
+      "title": "Home",
+      "slug": "",
+      "template": "front-page.php",
+      "status": "pending"
+    },
+    {
+      "title": "Servizi",
+      "slug": "servizi",
+      "template": "archive-service.php",
+      "status": "pending"
+    },
+    {
+      "title": "Chi Siamo",
+      "slug": "chi-siamo",
+      "template": "page.php",
+      "status": "pending"
+    },
+    {
+      "title": "Contatti",
+      "slug": "contatti",
+      "template": "page-contact.php",
+      "status": "pending"
+    },
+    {
+      "title": "Privacy Policy",
+      "slug": "privacy-policy",
+      "template": "page.php",
+      "status": "pending"
+    },
+    {
+      "title": "Cookie Policy",
+      "slug": "cookie-policy",
+      "template": "page.php",
+      "status": "pending"
+    }
+  ],
+  "contact_info": {
+    "company": "Cocoora di Primecare srl",
+    "vat": "IT10891001215",
+    "address": "Via Emanuele Gianturco 92",
+    "city": "Napoli",
+    "province": "NA",
+    "country": "Italia",
+    "phone": "+39 081 1822 7784",
+    "mobile": "+39 340 175 8287",
+    "email": "info@cocoora.it"
+  }
+}

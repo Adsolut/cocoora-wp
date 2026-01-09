@@ -1,0 +1,337 @@
+{
+    "key": "group_cocoora_homepage_sections",
+    "title": "Homepage Sections",
+    "fields": [
+        {
+            "key": "field_cocoora_sections",
+            "label": "Sezioni",
+            "name": "sections",
+            "type": "flexible_content",
+            "instructions": "Aggiungi e organizza le sezioni della homepage.",
+            "required": 0,
+            "layouts": {
+                "layout_hero": {
+                    "key": "layout_hero",
+                    "name": "hero",
+                    "label": "Hero Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_hero_title",
+                            "label": "Titolo",
+                            "name": "title",
+                            "type": "text",
+                            "required": 1
+                        },
+                        {
+                            "key": "field_hero_subtitle",
+                            "label": "Sottotitolo",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_hero_cta_primary",
+                            "label": "CTA Primario",
+                            "name": "cta_primary",
+                            "type": "link"
+                        },
+                        {
+                            "key": "field_hero_cta_secondary",
+                            "label": "CTA Secondario",
+                            "name": "cta_secondary",
+                            "type": "link"
+                        },
+                        {
+                            "key": "field_hero_background_image",
+                            "label": "Immagine di sfondo",
+                            "name": "background_image",
+                            "type": "image",
+                            "return_format": "array",
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_hero_overlay_opacity",
+                            "label": "Opacità overlay",
+                            "name": "overlay_opacity",
+                            "type": "range",
+                            "default_value": 50,
+                            "min": 0,
+                            "max": 100,
+                            "step": 10
+                        }
+                    ]
+                },
+                "layout_services": {
+                    "key": "layout_services",
+                    "name": "services",
+                    "label": "Griglia Servizi",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_services_title",
+                            "label": "Titolo sezione",
+                            "name": "title",
+                            "type": "text",
+                            "default_value": "I Nostri Servizi"
+                        },
+                        {
+                            "key": "field_services_subtitle",
+                            "label": "Sottotitolo",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "rows": 2
+                        },
+                        {
+                            "key": "field_services_show_all",
+                            "label": "Mostra tutti i servizi",
+                            "name": "show_all_services",
+                            "type": "true_false",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_services_selection",
+                            "label": "Servizi selezionati",
+                            "name": "selected_services",
+                            "type": "relationship",
+                            "post_type": ["service"],
+                            "filters": ["search"],
+                            "return_format": "id",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_services_show_all",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ]
+                        },
+                        {
+                            "key": "field_services_columns",
+                            "label": "Colonne",
+                            "name": "columns",
+                            "type": "select",
+                            "choices": {
+                                "2": "2 colonne",
+                                "3": "3 colonne",
+                                "4": "4 colonne"
+                            },
+                            "default_value": "3"
+                        },
+                        {
+                            "key": "field_services_cta",
+                            "label": "Link CTA",
+                            "name": "cta",
+                            "type": "link"
+                        }
+                    ]
+                },
+                "layout_about": {
+                    "key": "layout_about",
+                    "name": "about",
+                    "label": "Chi Siamo Preview",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_about_heading",
+                            "label": "Titolo",
+                            "name": "heading",
+                            "type": "text",
+                            "default_value": "Chi Siamo"
+                        },
+                        {
+                            "key": "field_about_content",
+                            "label": "Contenuto",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "toolbar": "basic",
+                            "media_upload": 0
+                        },
+                        {
+                            "key": "field_about_image",
+                            "label": "Immagine",
+                            "name": "image",
+                            "type": "image",
+                            "return_format": "array",
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_about_cta",
+                            "label": "Link CTA",
+                            "name": "cta",
+                            "type": "link"
+                        },
+                        {
+                            "key": "field_about_layout",
+                            "label": "Layout",
+                            "name": "layout",
+                            "type": "select",
+                            "choices": {
+                                "image_left": "Immagine a sinistra",
+                                "image_right": "Immagine a destra"
+                            },
+                            "default_value": "image_right"
+                        }
+                    ]
+                },
+                "layout_cta": {
+                    "key": "layout_cta",
+                    "name": "cta",
+                    "label": "Call to Action",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_cta_title",
+                            "label": "Titolo",
+                            "name": "title",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_cta_description",
+                            "label": "Descrizione",
+                            "name": "description",
+                            "type": "textarea",
+                            "rows": 2
+                        },
+                        {
+                            "key": "field_cta_primary",
+                            "label": "CTA Primario",
+                            "name": "cta_primary",
+                            "type": "link"
+                        },
+                        {
+                            "key": "field_cta_secondary",
+                            "label": "CTA Secondario",
+                            "name": "cta_secondary",
+                            "type": "link"
+                        },
+                        {
+                            "key": "field_cta_style",
+                            "label": "Stile",
+                            "name": "style",
+                            "type": "select",
+                            "choices": {
+                                "gradient": "Gradiente Blu-Navy",
+                                "solid": "Sfondo Navy",
+                                "light": "Sfondo Chiaro"
+                            },
+                            "default_value": "gradient"
+                        }
+                    ]
+                },
+                "layout_contact": {
+                    "key": "layout_contact",
+                    "name": "contact",
+                    "label": "Sezione Contatti",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_contact_title",
+                            "label": "Titolo",
+                            "name": "title",
+                            "type": "text",
+                            "default_value": "Contattaci"
+                        },
+                        {
+                            "key": "field_contact_subtitle",
+                            "label": "Sottotitolo",
+                            "name": "subtitle",
+                            "type": "textarea",
+                            "rows": 2
+                        },
+                        {
+                            "key": "field_contact_form_id",
+                            "label": "ID Contact Form 7",
+                            "name": "contact_form_id",
+                            "type": "number",
+                            "instructions": "Inserisci l'ID del modulo Contact Form 7"
+                        },
+                        {
+                            "key": "field_contact_show_info",
+                            "label": "Mostra info contatto",
+                            "name": "show_contact_info",
+                            "type": "true_false",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_contact_address",
+                            "label": "Indirizzo",
+                            "name": "address",
+                            "type": "text",
+                            "default_value": "Via Emanuele Gianturco 92, Napoli (NA), Italia"
+                        },
+                        {
+                            "key": "field_contact_phone",
+                            "label": "Telefono",
+                            "name": "phone",
+                            "type": "text",
+                            "default_value": "+39 081 1822 7784"
+                        },
+                        {
+                            "key": "field_contact_email",
+                            "label": "Email",
+                            "name": "email",
+                            "type": "email",
+                            "default_value": "info@cocoora.it"
+                        },
+                        {
+                            "key": "field_contact_map",
+                            "label": "Google Maps Embed",
+                            "name": "google_maps_embed",
+                            "type": "textarea",
+                            "instructions": "Incolla il codice iframe di Google Maps",
+                            "rows": 3
+                        }
+                    ]
+                },
+                "layout_testimonials": {
+                    "key": "layout_testimonials",
+                    "name": "testimonials",
+                    "label": "Testimonianze",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_testimonials_heading",
+                            "label": "Titolo",
+                            "name": "heading",
+                            "type": "text",
+                            "default_value": "Cosa dicono i nostri clienti"
+                        },
+                        {
+                            "key": "field_testimonials_selection",
+                            "label": "Testimonianze",
+                            "name": "testimonials",
+                            "type": "relationship",
+                            "post_type": ["testimonial"],
+                            "filters": ["search"],
+                            "return_format": "object"
+                        }
+                    ]
+                }
+            },
+            "button_label": "Aggiungi Sezione",
+            "min": 1,
+            "max": 10
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ["the_content"],
+    "active": true,
+    "description": "Sezioni flessibili per la homepage di Cocoora",
+    "show_in_rest": 0,
+    "modified": 1736420000
+}

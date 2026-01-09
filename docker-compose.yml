@@ -1,0 +1,69 @@
+services:
+  wordpress:
+    image: wordpress:6-php8.2-apache
+    container_name: cocoora-wordpress
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER:-wordpress}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-wordpress}
+      WORDPRESS_DB_NAME: ${DB_NAME:-wordpress}
+      WORDPRESS_DEBUG: ${WP_DEBUG:-1}
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        define('WP_SITEURL', 'http://localhost:8080');
+        define('WP_HOME', 'http://localhost:8080');
+    volumes:
+      - ./theme/cocoora-theme:/var/www/html/wp-content/themes/cocoora-theme
+      - ./plugins:/var/www/html/wp-content/plugins
+      - wordpress_data:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - cocoora-network
+
+  db:
+    image: mysql:8.0
+    container_name: cocoora-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-wordpress}
+      MYSQL_USER: ${DB_USER:-wordpress}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-wordpress}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - cocoora-network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: cocoora-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: ${DB_USER:-wordpress}
+      PMA_PASSWORD: ${DB_PASSWORD:-wordpress}
+      UPLOAD_LIMIT: 64M
+    depends_on:
+      - db
+    networks:
+      - cocoora-network
+
+volumes:
+  wordpress_data:
+  db_data:
+
+networks:
+  cocoora-network:
+    driver: bridge

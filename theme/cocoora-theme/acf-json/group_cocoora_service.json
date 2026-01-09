@@ -1,0 +1,94 @@
+{
+    "key": "group_cocoora_service",
+    "title": "Dettagli Servizio",
+    "fields": [
+        {
+            "key": "field_service_icon",
+            "label": "Icona",
+            "name": "service_icon",
+            "type": "select",
+            "instructions": "Seleziona un'icona per questo servizio.",
+            "choices": {
+                "dashicons-portfolio": "Portfolio",
+                "dashicons-admin-tools": "Strumenti",
+                "dashicons-chart-area": "Analytics",
+                "dashicons-admin-site-alt3": "Web",
+                "dashicons-groups": "Team",
+                "dashicons-megaphone": "Marketing",
+                "dashicons-admin-customizer": "Design",
+                "dashicons-admin-generic": "Impostazioni",
+                "dashicons-lightbulb": "Idea",
+                "dashicons-shield": "Sicurezza",
+                "dashicons-heart": "Cura",
+                "dashicons-star-filled": "Premium"
+            },
+            "default_value": "dashicons-portfolio",
+            "allow_null": 0
+        },
+        {
+            "key": "field_service_short_description",
+            "label": "Descrizione Breve",
+            "name": "short_description",
+            "type": "textarea",
+            "instructions": "Breve descrizione per la card del servizio (max 150 caratteri).",
+            "rows": 3,
+            "maxlength": 150
+        },
+        {
+            "key": "field_service_features",
+            "label": "Caratteristiche",
+            "name": "features",
+            "type": "repeater",
+            "instructions": "Elenco delle caratteristiche principali del servizio.",
+            "layout": "table",
+            "button_label": "Aggiungi Caratteristica",
+            "min": 0,
+            "max": 10,
+            "sub_fields": [
+                {
+                    "key": "field_feature_text",
+                    "label": "Caratteristica",
+                    "name": "text",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_service_gallery",
+            "label": "Galleria",
+            "name": "gallery",
+            "type": "gallery",
+            "instructions": "Immagini del servizio.",
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min": 0,
+            "max": 6
+        },
+        {
+            "key": "field_service_cta_text",
+            "label": "Testo CTA",
+            "name": "cta_text",
+            "type": "text",
+            "default_value": "Richiedi informazioni"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Campi personalizzati per i servizi",
+    "show_in_rest": 0,
+    "modified": 1736420000
+}

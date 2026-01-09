@@ -1,0 +1,67 @@
+{
+    "key": "group_cocoora_social",
+    "title": "Social Media",
+    "fields": [
+        {
+            "key": "field_social_facebook",
+            "label": "Facebook",
+            "name": "facebook_url",
+            "type": "url",
+            "placeholder": "https://facebook.com/cocoora"
+        },
+        {
+            "key": "field_social_instagram",
+            "label": "Instagram",
+            "name": "instagram_url",
+            "type": "url",
+            "placeholder": "https://instagram.com/cocoora"
+        },
+        {
+            "key": "field_social_linkedin",
+            "label": "LinkedIn",
+            "name": "linkedin_url",
+            "type": "url",
+            "placeholder": "https://linkedin.com/company/cocoora"
+        },
+        {
+            "key": "field_social_twitter",
+            "label": "X (Twitter)",
+            "name": "twitter_url",
+            "type": "url",
+            "placeholder": "https://x.com/cocoora"
+        },
+        {
+            "key": "field_social_youtube",
+            "label": "YouTube",
+            "name": "youtube_url",
+            "type": "url",
+            "placeholder": "https://youtube.com/@cocoora"
+        },
+        {
+            "key": "field_social_whatsapp",
+            "label": "WhatsApp",
+            "name": "whatsapp_number",
+            "type": "text",
+            "instructions": "Numero WhatsApp in formato internazionale (es. +393401758287)",
+            "placeholder": "+393401758287"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-social"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Link ai profili social media",
+    "show_in_rest": 0,
+    "modified": 1736420000
+}

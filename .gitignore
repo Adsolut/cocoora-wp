@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Build output (dist is tracked for deployment)
+# theme/cocoora-theme/dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# WordPress
+*.sql
+*.sql.gz
+
+# Backups
+backups/
+
+# Screenshots (large files)
+screenshots/current/
+screenshots/baseline/
+
+# Uploads
+wp-content/uploads/
+
+# Cache
+.cache/
+.vite/
+
+# Figma exports (optional - uncomment to track)
+# figma-exports/
+
+# Sensitive files
+*.pem
+*.key
+id_rsa*

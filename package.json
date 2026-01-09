@@ -1,0 +1,26 @@
+{
+  "name": "cocoora-wp",
+  "version": "1.0.0",
+  "description": "Cocoora WordPress Theme - Corporate/Agency Website",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.10"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.3"
+  },
+  "author": "Cocoora di Primecare srl",
+  "license": "UNLICENSED",
+  "private": true
+}

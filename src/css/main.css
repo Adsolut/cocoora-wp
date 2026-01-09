@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Cocoora Theme - Custom Components
+   ========================================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-700 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-cocoora-navy font-bold;
+  }
+
+  a {
+    @apply text-cocoora-blue hover:text-cocoora-navy transition-colors;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3
+           font-semibold rounded-lg transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-cocoora-blue text-white
+           hover:bg-cocoora-navy focus:ring-cocoora-blue;
+  }
+
+  .btn-secondary {
+    @apply btn bg-cocoora-navy text-white
+           hover:bg-cocoora-blue focus:ring-cocoora-navy;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-cocoora-blue text-cocoora-blue
+           hover:bg-cocoora-blue hover:text-white focus:ring-cocoora-blue;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden
+           transition-shadow hover:shadow-lg;
+  }
+
+  .card-body {
+    @apply p-6;
+  }
+
+  /* Section Spacing */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-light {
+    @apply section bg-cocoora-light;
+  }
+
+  /* Form Elements */
+  .form-input {
+    @apply block w-full rounded-lg border-gray-300
+           shadow-sm focus:border-cocoora-blue focus:ring-cocoora-blue;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-cocoora-navy font-medium px-4 py-2 rounded-lg
+           hover:bg-cocoora-light transition-colors;
+  }
+
+  .nav-link-active {
+    @apply nav-link bg-cocoora-light text-cocoora-blue;
+  }
+}
+
+@layer utilities {
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-cocoora-blue to-cocoora-navy
+           bg-clip-text text-transparent;
+  }
+
+  /* Container Max Width */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4;
+  }
+}

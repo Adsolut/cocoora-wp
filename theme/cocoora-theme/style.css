@@ -1,0 +1,24 @@
+/*
+Theme Name: Cocoora Theme
+Theme URI: https://cocoora.it
+Author: Cocoora di Primecare srl
+Author URI: https://cocoora.it
+Description: Custom corporate theme for Cocoora - Services and Contact Forms with CRM integration. Built with Vite and Tailwind CSS.
+Version: 1.0.0
+Tested up to: 6.4
+Requires PHP: 8.2
+License: Proprietary
+License URI: https://cocoora.it
+Text Domain: cocoora
+Tags: corporate, agency, services, contact-form, custom-theme
+
+Cocoora Corporate Theme
+Copyright (C) 2025 Cocoora di Primecare srl
+All rights reserved.
+*/
+
+/*
+ * Note: All styles are compiled via Vite/Tailwind CSS.
+ * The compiled CSS is loaded from /dist/css/
+ * See: src/css/main.css for source styles
+ */

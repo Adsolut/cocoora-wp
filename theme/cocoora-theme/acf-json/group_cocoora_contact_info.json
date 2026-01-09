@@ -1,0 +1,115 @@
+{
+    "key": "group_cocoora_contact_info",
+    "title": "Informazioni Contatto",
+    "fields": [
+        {
+            "key": "field_contact_company_name",
+            "label": "Nome Azienda",
+            "name": "company_name",
+            "type": "text",
+            "default_value": "Cocoora di Primecare srl"
+        },
+        {
+            "key": "field_contact_vat",
+            "label": "Partita IVA",
+            "name": "vat_number",
+            "type": "text",
+            "default_value": "IT10891001215"
+        },
+        {
+            "key": "field_contact_address",
+            "label": "Indirizzo",
+            "name": "address",
+            "type": "group",
+            "sub_fields": [
+                {
+                    "key": "field_address_street",
+                    "label": "Via",
+                    "name": "street",
+                    "type": "text",
+                    "default_value": "Via Emanuele Gianturco 92"
+                },
+                {
+                    "key": "field_address_city",
+                    "label": "Città",
+                    "name": "city",
+                    "type": "text",
+                    "default_value": "Napoli"
+                },
+                {
+                    "key": "field_address_province",
+                    "label": "Provincia",
+                    "name": "province",
+                    "type": "text",
+                    "default_value": "NA"
+                },
+                {
+                    "key": "field_address_country",
+                    "label": "Paese",
+                    "name": "country",
+                    "type": "text",
+                    "default_value": "Italia"
+                },
+                {
+                    "key": "field_address_zip",
+                    "label": "CAP",
+                    "name": "zip",
+                    "type": "text"
+                }
+            ]
+        },
+        {
+            "key": "field_contact_phone",
+            "label": "Telefono",
+            "name": "phone",
+            "type": "text",
+            "default_value": "+39 081 1822 7784"
+        },
+        {
+            "key": "field_contact_mobile",
+            "label": "Cellulare",
+            "name": "mobile",
+            "type": "text",
+            "default_value": "+39 340 175 8287"
+        },
+        {
+            "key": "field_contact_email",
+            "label": "Email",
+            "name": "email",
+            "type": "email",
+            "default_value": "info@cocoora.it"
+        },
+        {
+            "key": "field_contact_pec",
+            "label": "PEC",
+            "name": "pec",
+            "type": "email"
+        },
+        {
+            "key": "field_contact_hours",
+            "label": "Orari di apertura",
+            "name": "business_hours",
+            "type": "textarea",
+            "rows": 3,
+            "default_value": "Lun - Ven: 9:00 - 18:00"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-contatti"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "description": "Informazioni di contatto aziendali",
+    "show_in_rest": 0,
+    "modified": 1736420000
+}
