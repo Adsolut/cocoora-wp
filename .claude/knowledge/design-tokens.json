@@ -1,4 +1,10 @@
 {
+  "figma": {
+    "fileId": "Pct8765tf4EgdRjfl9IVu0",
+    "lastExtracted": "2026-01-09",
+    "pages": ["Style", "Desktop", "Mobile", "Prototype", "Symbols"],
+    "sections": ["Header", "hero banner", "come funziona", "location", "piani", "faq", "form", "footer"]
+  },
   "colors": {
     "primary": {
       "blue": {
@@ -10,6 +16,38 @@
         "value": "#102D69",
         "tailwind": "cocoora-navy",
         "usage": "Headings, footer, dark elements, hover states"
+      },
+      "darkBlue": {
+        "value": "#143DD7",
+        "tailwind": "cocoora-dark-blue",
+        "usage": "Secondary accent, hover states"
+      }
+    },
+    "accent": {
+      "lightBlue": {
+        "value": "#2CB9FF",
+        "tailwind": "cocoora-light-blue",
+        "usage": "Highlights, secondary CTAs"
+      },
+      "cyan": {
+        "value": "#89E9FF",
+        "tailwind": "cocoora-cyan",
+        "usage": "Decorative elements"
+      },
+      "skyBlue": {
+        "value": "#C0E9FF",
+        "tailwind": "cocoora-sky",
+        "usage": "Section backgrounds, gradients"
+      },
+      "lavender": {
+        "value": "#D0C9FD",
+        "tailwind": "cocoora-lavender",
+        "usage": "Accent backgrounds"
+      },
+      "lightLavender": {
+        "value": "#E4E1FE",
+        "tailwind": "cocoora-light-lavender",
+        "usage": "Subtle backgrounds"
       }
     },
     "neutral": {
@@ -19,7 +57,7 @@
         "usage": "Backgrounds, text on dark"
       },
       "light": {
-        "value": "#F5F7FA",
+        "value": "#EDF1FC",
         "tailwind": "cocoora-light",
         "usage": "Section backgrounds, cards"
       },
@@ -44,7 +82,8 @@
   },
   "typography": {
     "fontFamily": {
-      "sans": ["Arial", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+      "heading": ["Syne", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      "sans": ["DM Sans", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
       "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"]
     },
     "fontSize": {

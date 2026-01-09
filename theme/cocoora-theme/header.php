@@ -61,8 +61,8 @@
 
 				<!-- CTA Button (Desktop) -->
 				<div class="hidden lg:block">
-					<a href="<?php echo esc_url( home_url( '/contatti/' ) ); ?>" class="btn-primary">
-						<?php esc_html_e( 'Contattaci', 'cocoora' ); ?>
+					<a href="<?php echo is_front_page() ? '#form' : esc_url( home_url( '/#form' ) ); ?>" class="btn-primary">
+						<?php esc_html_e( 'Contatta il doc', 'cocoora' ); ?>
 					</a>
 				</div>
 
@@ -117,8 +117,8 @@
 					);
 					?>
 					<div class="pt-4 px-4">
-						<a href="<?php echo esc_url( home_url( '/contatti/' ) ); ?>" class="btn-primary w-full text-center">
-							<?php esc_html_e( 'Contattaci', 'cocoora' ); ?>
+						<a href="<?php echo is_front_page() ? '#form' : esc_url( home_url( '/#form' ) ); ?>" class="btn-primary w-full text-center">
+							<?php esc_html_e( 'Contatta il doc', 'cocoora' ); ?>
 						</a>
 					</div>
 				</div>

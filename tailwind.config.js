@@ -7,12 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Primary colors (from Figma)
         'cocoora-blue': '#008ECF',
         'cocoora-navy': '#102D69',
-        'cocoora-light': '#F5F7FA',
+        'cocoora-dark-blue': '#143DD7',
+        // Accent colors (from Figma)
+        'cocoora-light-blue': '#2CB9FF',
+        'cocoora-cyan': '#89E9FF',
+        'cocoora-sky': '#C0E9FF',
+        'cocoora-lavender': '#D0C9FD',
+        'cocoora-light-lavender': '#E4E1FE',
+        // Neutral
+        'cocoora-light': '#EDF1FC',
       },
       fontFamily: {
-        sans: ['Arial', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Syne', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: ['"DM Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       },
       container: {
         center: true,

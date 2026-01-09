@@ -1,3 +1,6 @@
+/* Google Fonts - DM Sans & Syne (from Figma) */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,7 +19,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-cocoora-navy font-bold;
+    @apply text-cocoora-navy font-bold font-heading;
   }
 
   a {
@@ -102,4 +105,100 @@
   .container-wide {
     @apply max-w-7xl mx-auto px-4;
   }
+}
+
+/* ==========================================================================
+   Decorative Bubbles (from Figma)
+   ========================================================================== */
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(192, 233, 255, 0.6) 0%, rgba(137, 233, 255, 0.3) 100%);
+  filter: blur(1px);
+  animation: float 20s ease-in-out infinite;
+}
+
+.bubble-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  width: 300px;
+  height: 300px;
+  top: 200px;
+  right: 200px;
+  animation-delay: -5s;
+}
+
+.bubble-3 {
+  width: 200px;
+  height: 200px;
+  bottom: 100px;
+  left: 10%;
+  animation-delay: -10s;
+}
+
+.bubble-4 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 5%;
+  animation-delay: -15s;
+}
+
+.bubble-form-1 {
+  width: 500px;
+  height: 500px;
+  bottom: -200px;
+  left: -200px;
+  animation-delay: -3s;
+}
+
+.bubble-form-2 {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  right: -150px;
+  animation-delay: -8s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) scale(1.02);
+  }
+  50% {
+    transform: translateY(-10px) scale(0.98);
+  }
+  75% {
+    transform: translateY(-25px) scale(1.01);
+  }
+}
+
+/* ==========================================================================
+   Alpine.js Collapse Animation
+   ========================================================================== */
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* FAQ Accordion styles */
+[x-collapse] {
+  overflow: hidden;
+}
+
+[x-collapse].x-collapse-exit {
+  transition: height 0.2s ease-out;
+}
+
+[x-collapse].x-collapse-enter {
+  transition: height 0.2s ease-in;
 }
