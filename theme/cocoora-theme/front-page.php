@@ -58,9 +58,9 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 					?>
 						<img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>" class="rounded-2xl shadow-2xl">
 					<?php else : ?>
-						<!-- Placeholder for images -->
+						<!-- Hero Visual from Figma -->
 						<div class="relative">
-							<div class="aspect-[4/5] max-w-md mx-auto bg-gradient-to-br from-cocoora-sky to-cocoora-light-blue rounded-2xl shadow-xl"></div>
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-visual.png" alt="<?php esc_attr_e('Cocoora - Paziente e Medico', 'cocoora'); ?>" class="max-w-lg mx-auto drop-shadow-2xl">
 						</div>
 					<?php endif; ?>
 				</div>
@@ -96,6 +96,8 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 						if ($patients_image) :
 						?>
 							<img src="<?php echo esc_url($patients_image['url']); ?>" alt="<?php echo esc_attr($patients_image['alt']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+						<?php else : ?>
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/card-pazienti.png" alt="<?php esc_attr_e('Per i pazienti', 'cocoora'); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 						<?php endif; ?>
 					</div>
 					<div class="p-6">
@@ -116,6 +118,8 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 						if ($doctors_image) :
 						?>
 							<img src="<?php echo esc_url($doctors_image['url']); ?>" alt="<?php echo esc_attr($doctors_image['alt']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+						<?php else : ?>
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/card-medici.png" alt="<?php esc_attr_e('Per i medici', 'cocoora'); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 						<?php endif; ?>
 					</div>
 					<div class="p-6">
@@ -162,11 +166,15 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 						$count++;
 					endforeach;
 				else :
-					for ($i = 0; $i < 3; $i++) :
+					// Fallback to Figma images
+					$location_images = array('location-1.png', 'location-2.png', 'location-3.png');
+					foreach ($location_images as $img) :
 				?>
-					<div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-white to-cocoora-light"></div>
+					<div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/<?php echo esc_attr($img); ?>" alt="<?php esc_attr_e('Cocoora Location', 'cocoora'); ?>" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+					</div>
 				<?php
-					endfor;
+					endforeach;
 				endif;
 				?>
 			</div>

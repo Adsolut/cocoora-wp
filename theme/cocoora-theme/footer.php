@@ -16,22 +16,14 @@
 			<div class="flex flex-col items-center text-center space-y-6">
 
 				<!-- Logo -->
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2" rel="home">
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center" rel="home">
 					<?php if (has_custom_logo()) : ?>
 						<div class="brightness-0 invert">
 							<?php the_custom_logo(); ?>
 						</div>
 					<?php else : ?>
-						<!-- Logo Icon -->
-						<svg class="w-8 h-8 text-white" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
-							<circle cx="12" cy="14" r="3" fill="currentColor"/>
-							<circle cx="20" cy="14" r="3" fill="currentColor"/>
-							<path d="M10 20 Q16 26 22 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-						</svg>
-						<span class="text-xl font-bold font-heading text-white">
-							<?php bloginfo('name'); ?>
-						</span>
+						<!-- Logo from Figma (inverted for dark background) -->
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.svg" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-8 w-auto brightness-0 invert">
 					<?php endif; ?>
 				</a>
 

@@ -31,20 +31,12 @@
 			<nav class="flex items-center justify-between h-20">
 
 				<!-- Logo -->
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2 flex-shrink-0" rel="home">
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center flex-shrink-0" rel="home">
 					<?php if (has_custom_logo()) : ?>
 						<?php the_custom_logo(); ?>
 					<?php else : ?>
-						<!-- Logo Icon -->
-						<svg class="w-8 h-8 text-cocoora-blue" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
-							<circle cx="12" cy="14" r="3" fill="currentColor"/>
-							<circle cx="20" cy="14" r="3" fill="currentColor"/>
-							<path d="M10 20 Q16 26 22 20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-						</svg>
-						<span class="text-2xl font-bold font-heading text-cocoora-navy">
-							<?php bloginfo('name'); ?>
-						</span>
+						<!-- Logo from Figma -->
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.svg" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="h-10 w-auto">
 					<?php endif; ?>
 				</a>
 
