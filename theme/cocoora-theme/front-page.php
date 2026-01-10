@@ -29,6 +29,12 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 			<div class="absolute top-1/2 left-5 w-[180px] h-[180px] rounded-full bg-gradient-to-br from-cocoora-light-blue/30 to-cocoora-sky/20 blur-sm"></div>
 		</div>
 
+		<!-- Background Hand Images -->
+		<div class="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
+			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hand-top.png" alt="" class="absolute -top-20 -right-20 w-[400px] opacity-60" aria-hidden="true">
+			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hand-bottom.png" alt="" class="absolute -bottom-20 -left-20 w-[400px] opacity-60" aria-hidden="true">
+		</div>
+
 		<div class="container relative z-10">
 			<div class="grid lg:grid-cols-2 gap-12 items-center">
 				<!-- Text Content -->
@@ -51,16 +57,29 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 				</div>
 
 				<!-- Hero Image Area -->
-				<div class="relative hidden lg:block">
+				<div class="relative mt-10 lg:mt-0">
 					<?php
 					$hero_image = get_field('hero_image');
 					if ($hero_image) :
 					?>
-						<img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>" class="rounded-2xl shadow-2xl">
+						<img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>" class="rounded-2xl shadow-2xl max-w-sm mx-auto lg:max-w-lg">
 					<?php else : ?>
 						<!-- Hero Visual from Figma -->
 						<div class="relative">
-							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-visual.png" alt="<?php esc_attr_e('Cocoora - Paziente e Medico', 'cocoora'); ?>" class="max-w-lg mx-auto drop-shadow-2xl">
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-visual.png" alt="<?php esc_attr_e('Cocoora - Paziente e Medico', 'cocoora'); ?>" class="max-w-xs mx-auto lg:max-w-lg drop-shadow-2xl">
+
+							<!-- Price Badges (hidden on mobile for cleaner look) -->
+							<div class="hidden lg:block">
+								<div class="absolute top-4 -left-4 bg-white rounded-full px-4 py-2 shadow-lg border border-cocoora-sky/30">
+									<span class="text-cocoora-blue font-bold">€30</span>
+								</div>
+								<div class="absolute top-1/3 -right-8 bg-white rounded-full px-4 py-2 shadow-lg border border-cocoora-sky/30">
+									<span class="text-cocoora-blue font-bold">€50</span>
+								</div>
+								<div class="absolute bottom-1/4 -left-8 bg-white rounded-full px-4 py-2 shadow-lg border border-cocoora-sky/30">
+									<span class="text-cocoora-blue font-bold">€80</span>
+								</div>
+							</div>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -89,44 +108,44 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 			<!-- Cards Grid -->
 			<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 				<!-- Per i pazienti -->
-				<div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow">
-					<div class="aspect-video bg-gradient-to-br from-cocoora-sky/40 to-cocoora-light-blue/30 overflow-hidden">
-						<?php
-						$patients_image = get_field('patients_image');
-						if ($patients_image) :
-						?>
-							<img src="<?php echo esc_url($patients_image['url']); ?>" alt="<?php echo esc_attr($patients_image['alt']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-						<?php else : ?>
-							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/card-pazienti.png" alt="<?php esc_attr_e('Per i pazienti', 'cocoora'); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-						<?php endif; ?>
-					</div>
-					<div class="p-6">
-						<h3 class="text-xl font-bold font-heading text-cocoora-navy mb-2">
+				<div class="relative rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow aspect-[4/3]">
+					<?php
+					$patients_image = get_field('patients_image');
+					if ($patients_image) :
+					?>
+						<img src="<?php echo esc_url($patients_image['url']); ?>" alt="<?php echo esc_attr($patients_image['alt']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+					<?php else : ?>
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/card-pazienti.png" alt="<?php esc_attr_e('Per i pazienti', 'cocoora'); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+					<?php endif; ?>
+					<!-- Text Overlay -->
+					<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+					<div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+						<h3 class="text-xl font-bold font-heading mb-1">
 							<?php esc_html_e('Per i pazienti', 'cocoora'); ?>
 						</h3>
-						<p class="text-gray-600">
+						<p class="text-white/80 text-sm">
 							<?php esc_html_e('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'cocoora'); ?>
 						</p>
 					</div>
 				</div>
 
 				<!-- Per i medici -->
-				<div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow">
-					<div class="aspect-video bg-gradient-to-br from-cocoora-sky/40 to-cocoora-light-blue/30 overflow-hidden">
-						<?php
-						$doctors_image = get_field('doctors_image');
-						if ($doctors_image) :
-						?>
-							<img src="<?php echo esc_url($doctors_image['url']); ?>" alt="<?php echo esc_attr($doctors_image['alt']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-						<?php else : ?>
-							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/card-medici.png" alt="<?php esc_attr_e('Per i medici', 'cocoora'); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-						<?php endif; ?>
-					</div>
-					<div class="p-6">
-						<h3 class="text-xl font-bold font-heading text-cocoora-navy mb-2">
+				<div class="relative rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow aspect-[4/3]">
+					<?php
+					$doctors_image = get_field('doctors_image');
+					if ($doctors_image) :
+					?>
+						<img src="<?php echo esc_url($doctors_image['url']); ?>" alt="<?php echo esc_attr($doctors_image['alt']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+					<?php else : ?>
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/card-medici.png" alt="<?php esc_attr_e('Per i medici', 'cocoora'); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+					<?php endif; ?>
+					<!-- Text Overlay -->
+					<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+					<div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+						<h3 class="text-xl font-bold font-heading mb-1">
 							<?php esc_html_e('Per i medici', 'cocoora'); ?>
 						</h3>
-						<p class="text-gray-600">
+						<p class="text-white/80 text-sm">
 							<?php esc_html_e('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'cocoora'); ?>
 						</p>
 					</div>
@@ -228,6 +247,7 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 						'featured' => false,
 						'button_text' => 'Scopri il piano',
 						'button_style' => 'outline',
+						'icon' => 'circle-outline',
 					),
 					array(
 						'name' => 'Plus',
@@ -242,6 +262,7 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 						'featured' => true,
 						'button_text' => 'Scegli il piano',
 						'button_style' => 'filled',
+						'icon' => 'star-badge',
 					),
 					array(
 						'name' => 'Elite',
@@ -257,6 +278,7 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 						'featured' => false,
 						'button_text' => 'Scegli il piano',
 						'button_style' => 'filled',
+						'icon' => 'star',
 					),
 				);
 
@@ -267,11 +289,10 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 						<div class="p-8">
 							<!-- Plan Name -->
 							<div class="flex items-center gap-2 mb-4">
-								<?php if (!$plan['featured']) : ?>
-									<svg class="w-5 h-5 text-cocoora-blue" fill="currentColor" viewBox="0 0 24 24">
-										<circle cx="12" cy="12" r="10"/>
-									</svg>
-								<?php endif; ?>
+								<!-- Plan Icon (filled circle) -->
+								<svg class="w-4 h-4 text-cocoora-blue" fill="currentColor" viewBox="0 0 24 24">
+									<circle cx="12" cy="12" r="10"/>
+								</svg>
 								<h3 class="text-lg font-medium text-gray-500"><?php echo esc_html($plan['name']); ?></h3>
 							</div>
 
@@ -390,6 +411,12 @@ $hero_subtitle = get_field('hero_subtitle') ?: 'Uno spazio pensato per avvicinar
 		<div class="absolute inset-0 pointer-events-none overflow-hidden">
 			<div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-cocoora-sky/60 to-cocoora-cyan/30 blur-sm"></div>
 			<div class="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-cocoora-cyan/40 to-cocoora-light-blue/20 blur-sm"></div>
+		</div>
+
+		<!-- Background Hand Images -->
+		<div class="absolute inset-0 pointer-events-none overflow-hidden hidden lg:block">
+			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/form-hand-1.png" alt="" class="absolute -bottom-10 -left-20 w-[350px] opacity-70" aria-hidden="true">
+			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/form-hand-2.png" alt="" class="absolute -bottom-10 -right-20 w-[350px] opacity-70" aria-hidden="true">
 		</div>
 
 		<div class="container relative z-10 max-w-2xl">
